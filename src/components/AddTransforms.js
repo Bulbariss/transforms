@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import TransformCards from "./TransformCards";
+import TransformCards from "./molecules/TransformCards";
 
 function AddTransforms() {
   let select = useRef();

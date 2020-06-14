@@ -215,6 +215,10 @@ textarea::-webkit-input-placeholder {
   height: 3.5rem;
 }
 
+.h-96 {
+  height: 30rem;
+}
+
 .before-01::before {
   content: "01";
   display: block;

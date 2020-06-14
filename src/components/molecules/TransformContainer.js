@@ -2,7 +2,9 @@ import React from "react";
 
 function TransformContainer({ children }) {
   return (
-    <div className={`flex justify-center items-center h-64`}>{children}</div>
+    <div className={`flex justify-center items-center h-96 p-4`}>
+      {children}
+    </div>
   );
 }
 

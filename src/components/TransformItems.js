@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import TransformText from "./TransformText";
-import TransformImage from "./TransformImage";
-import TransformCube from "./TransformCube";
-import TransformContainer from "./TransformContainer";
+import TransformText from "./atoms/TransformText";
+import TransformImage from "./atoms/TransformImage";
+import TransformCube from "./atoms/TransformCube";
+import TransformContainer from "./molecules/TransformContainer";
 
 function TransformItems() {
   const text = <TransformText className={itemClasses} />;
