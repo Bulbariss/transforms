@@ -1,38 +1,52 @@
 import React, { useContext, useState } from "react";
 import { counterContext } from "../store/Store";
 import { useObserver } from "mobx-react-lite";
+import { CheckAngle } from "./InputRegex";
 
 function TransformCards({ id }) {
   const store = useContext(counterContext);
   let index = store.getIndexById(id);
   let [input, setInput] = useState(store.items[index].value);
-  // let { name, value, placeholder } = store.getItemById(id);
+  let [border, setBorder] = useState("");
 
   function handleOnChange(event) {
     setInput((input = event.target.value));
     store.changeValue(index, event.target.value);
   }
 
+  function validateName() {
+    if (CheckAngle(input)) {
+      setBorder("");
+    } else {
+      setBorder("border-red-500");
+    }
+  }
+
   return useObserver(() => (
-    <div className="h-24 w-full md:w-56 rounded-lg bg-gray-400 m-2 px-4 py-2">
+    <div className="h-24 w-full md:w-56 rounded-lg bg-gray-400 m-2 px-4 py-2 ">
       <div className="flex justify-between">
         <p className="text-lg font-bold pb-2">{store.items[index].name}</p>
         <button className="text-red-600" onClick={() => store.removeItem(id)}>
           x
         </button>
       </div>
-      {/* <p className="">{value}</p> */}
       <label className="" htmlFor="input-name">
-        {/* <p className="pb-1">Your Name</p> */}
         <input
-          className="w-full rounded-lg"
+          className={`w-full rounded-lg ${border}`}
           type="text"
           placeholder={store.items[index].placeholder}
           value={input}
           onChange={() => handleOnChange(event)}
-          //   onBlur={this.validateName}
+          onBlur={() => validateName()}
         />
       </label>
+      <style jsx global>{`
+        .border-red-500 {
+          --border-opacity: 1 !important;
+          border-color: #e75e5e !important;
+          border-color: rgba(231, 94, 94, var(--border-opacity)) !important;
+        }
+      `}</style>
     </div>
   ));
 }

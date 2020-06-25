@@ -1,6 +1,7 @@
 import React, { createContext } from "react";
 import { useLocalStore } from "mobx-react-lite";
 import uniqueId from "lodash/uniqueId";
+import "mobx-react-lite/batchingForReactDom";
 
 export const counterContext = createContext();
 
@@ -13,6 +14,13 @@ export const CounterProvider = ({ children }) => {
       value: "",
       placeholder: "",
     },
+    itemCss: `.item {
+  color: #333;
+  transition: all 0.3s ease-in;
+}`,
+    containerCss: `.container {
+  transition: all 0.3s ease-in;
+}`,
 
     addItem(name, value, placeholder) {
       store.items.push({
@@ -40,11 +48,9 @@ export const CounterProvider = ({ children }) => {
     changeValue(index, newValue) {
       store.items[index].value = newValue;
     },
-    
-    print() {
-      store.items.map((h) => {
-        console.log(h.value);
-      });
+
+    getString() {
+      return store.items.map((el) => `${el.name}(${el.value})`).join(" ");
     },
   }));
 

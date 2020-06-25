@@ -1,11 +1,12 @@
 import React from "react";
-import CssCard from "./molecules/CssCard";
+import ItemCss from "./molecules/ItemCss";
+import ContainerCss from "./molecules/ContainerCss";
 
 function CustomCss() {
   return (
     <section className="max-w-80 flex flex-col md:flex-row ">
-      <CssCard label="Container Css" />
-      <CssCard label="Item(s) Css" />
+      <ContainerCss />
+      <ItemCss />
     </section>
   );
 }

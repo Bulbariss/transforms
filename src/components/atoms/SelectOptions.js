@@ -1,8 +1,8 @@
 export const selectOptions = [
   {
-    value: "Saab, length",
+    value: "rotateX, length",
   },
   {
-    value: "Volvo, length",
+    value: "rotateY, length",
   },
 ];

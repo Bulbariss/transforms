@@ -5,20 +5,16 @@ import TransformCube from "./atoms/TransformCube";
 import TransformContainer from "./molecules/TransformContainer";
 
 function TransformItems() {
-  const text = <TransformText className={itemClasses} />;
-  const image = <TransformImage className={itemClasses} />;
-  const cube = <TransformCube className={itemClasses} />;
+  const text = <TransformText ContainerCss />;
+  const image = <TransformImage ContainerCss />;
+  const cube = <TransformCube ContainerCss />;
 
   let [activeComp, setActiveComp] = useState(text);
-  let containerClasses = "";
-  let itemClasses = "";
 
   return (
     <section className="max-w-80">
       <div className="bg-green-600">
-        <TransformContainer className={containerClasses}>
-          {activeComp}
-        </TransformContainer>
+        <TransformContainer>{activeComp}</TransformContainer>
       </div>
 
       <div className="h-14 flex justify-center items-center max-w-80">
