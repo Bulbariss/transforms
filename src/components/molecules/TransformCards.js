@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import TransformCard from "../atoms/TransformCard";
+import { counterContext } from "../store/Store";
+import { useObserver } from "mobx-react-lite";
 
-function TransformCards({ list }) {
+function TransformCards() {
+  const store = useContext(counterContext);
+
   let padding = "";
-  if (list[0]) {
+  if (store.items.name) {
     padding = "p-4";
   }
-  const transformItems = list.map((el, key) => (
-    <TransformCard key={key} heading={el[0]} value={el[1]} />
-  ));
-  return (
+  return useObserver(() => (
     <div className={`${padding} flex flex-wrap justify-center`}>
-      {transformItems}
+      {store.items.map((el) => (
+        <TransformCard key={el.id} id={el.id} />
+      ))}
     </div>
-  );
+  ));
 }
 
 export default TransformCards;

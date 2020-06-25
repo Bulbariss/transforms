@@ -20,6 +20,7 @@ function TransformItems() {
           {activeComp}
         </TransformContainer>
       </div>
+
       <div className="h-14 flex justify-center items-center max-w-80">
         <button
           className="bg-blue-700 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2"
