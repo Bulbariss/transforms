@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { counterContext } from "../store/Store";
+import { appContext } from "../store/Store";
 import { useObserver } from "mobx-react-lite";
 
 function ContainerCss() {
-  const store = useContext(counterContext);
+  const store = useContext(appContext);
   let [input, setInput] = useState(store.containerCss);
 
   function handleOnChange(event) {

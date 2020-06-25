@@ -1,11 +1,11 @@
 import React, { useRef, useContext } from "react";
 import TransformCards from "./molecules/TransformCards";
 import Select from "./atoms/Select";
-import { counterContext } from "./store/Store";
+import { appContext } from "./store/Store";
 import { useObserver } from "mobx-react-lite";
 
-function AddTransforms() {
-  const store = useContext(counterContext);
+function DisplayTransforms() {
+  const store = useContext(appContext);
 
   let select = useRef();
 
@@ -20,7 +20,9 @@ function AddTransforms() {
   return useObserver(() => (
     <section className="max-w-80">
       <div className="min-h-14 flex items-center px-4 bg-gray-200">
-        <p className="text-lg font-bold ">transform: {store.getString()}</p>
+        <p className="text-lg font-bold py-4 leading-relaxed">
+          transform: {store.getString()}
+        </p>
       </div>
       <div className="flex px-4 items-left md:items-center py-4 flex-col md:flex-row bg-gray-300">
         <h1 className="font-bold text-2xl pr-4 pb-2 md:pb-0">Add Transform</h1>
@@ -39,4 +41,4 @@ function AddTransforms() {
   ));
 }
 
-export default AddTransforms;
+export default DisplayTransforms;

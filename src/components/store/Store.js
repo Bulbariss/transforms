@@ -3,7 +3,7 @@ import { useLocalStore } from "mobx-react-lite";
 import uniqueId from "lodash/uniqueId";
 import "mobx-react-lite/batchingForReactDom";
 
-export const counterContext = createContext();
+export const appContext = createContext();
 
 export const CounterProvider = ({ children }) => {
   const store = useLocalStore(() => ({
@@ -54,7 +54,5 @@ export const CounterProvider = ({ children }) => {
     },
   }));
 
-  return (
-    <counterContext.Provider value={store}>{children}</counterContext.Provider>
-  );
+  return <appContext.Provider value={store}>{children}</appContext.Provider>;
 };

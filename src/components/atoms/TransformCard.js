@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { counterContext } from "../store/Store";
+import { appContext } from "../store/Store";
 import { useObserver } from "mobx-react-lite";
 import { CheckAngle } from "./InputRegex";
 
 function TransformCards({ id }) {
-  const store = useContext(counterContext);
+  const store = useContext(appContext);
   let index = store.getIndexById(id);
   let [input, setInput] = useState(store.items[index].value);
   let [border, setBorder] = useState("");
