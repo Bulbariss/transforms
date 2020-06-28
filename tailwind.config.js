@@ -1,7 +1,5 @@
 module.exports = {
-  corePlugins: {
-    container: false,
-  },
+  purge: [],
   theme: {
     extend: {
       colors: {
@@ -79,4 +77,8 @@ module.exports = {
     },
   },
   variants: {},
+  plugins: [require("tailwindcss-theming"), require("autoprefixer")],
+  corePlugins: {
+    container: false,
+  },
 };

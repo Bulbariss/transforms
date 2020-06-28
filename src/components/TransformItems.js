@@ -19,19 +19,19 @@ function TransformItems() {
 
       <div className="h-14 flex justify-center items-center max-w-80">
         <button
-          className="bg-blue-700 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2"
+          className="bg-gray200 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2"
           onClick={() => setActiveComp((activeComp = text))}
         >
           Text
         </button>
         <button
-          className="bg-blue-700 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2"
+          className="bg-gray200 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2"
           onClick={() => setActiveComp((activeComp = image))}
         >
           Image
         </button>
         <button
-          className="bg-blue-700 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2"
+          className="bg-gray200 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2"
           onClick={() => setActiveComp((activeComp = cube))}
         >
           Cube

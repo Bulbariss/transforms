@@ -22,12 +22,13 @@ export const CounterProvider = ({ children }) => {
   transition: all 0.3s ease-in;
 }`,
 
-    addItem(name, value, placeholder) {
+    addItem(name, value, placeholder, regex) {
       store.items.push({
         id: uniqueId(),
         name: name,
         value: value,
         placeholder: placeholder,
+        regex: regex,
       });
     },
 
