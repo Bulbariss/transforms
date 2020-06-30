@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 function ThemeToggle() {
-  const [isMoon, setIsMoon] = useState(false);
+  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const [isMoon, setIsMoon] = useState(darkModeMediaQuery.matches);
+
+  darkModeMediaQuery.addListener((e) => {
+    const darkModeOn = e.matches;
+    setIsMoon(darkModeOn);
+  });
 
   useEffect(() => {
     document.body.classList.add("transition-colors");
@@ -14,14 +20,14 @@ function ThemeToggle() {
     if (isMoon) {
       document.body.setAttribute("data-theme", "dark");
     } else {
-      document.body.setAttribute("data-theme", "main");
+      document.body.setAttribute("data-theme", "light");
     }
   }, [isMoon]);
 
   return (
     <button
       type="button"
-      aria-label="Switch to dark mode"
+      aria-label="Switch color `theme"
       className="w-8 h-8 flex justify-center items-center mr-4 hover:bg-gray-500 rounded-md"
       onClick={() => setIsMoon(!isMoon)}
     >

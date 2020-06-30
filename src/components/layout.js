@@ -9,10 +9,12 @@ function Layout({ children }) {
   return (
     <Fragment>
       <CounterProvider>
-        <Header />
-        <SmartOutline />
-        <main>{children}</main>
-        <Footer />
+        <div className="relative min-h-screen overflow-x-hidden">
+          <Header />
+          <SmartOutline />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </CounterProvider>
     </Fragment>
   );

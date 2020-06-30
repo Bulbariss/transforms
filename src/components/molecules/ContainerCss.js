@@ -12,7 +12,7 @@ function ContainerCss() {
   }
 
   return useObserver(() => (
-    <div className="w-full bg-gray-nice p-4">
+    <div className="w-full bg-gray-300 p-4">
       <h3 className="font-bold text-3xl pb-2">Container CSS</h3>
       <textarea
         placeholder="type your message"

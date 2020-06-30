@@ -23,7 +23,7 @@ function TransformCards({ id }) {
   }
 
   return useObserver(() => (
-    <div className="h-24 w-full md:w-64 rounded-lg bg-gray-400 m-2 px-4 py-2 ">
+    <div className="h-24 w-full md:w-64 rounded-xl bg-gray-400 m-2 px-4 py-2">
       <div className="flex justify-between">
         <p className="text-lg font-bold pb-2">{store.items[index].name}</p>
         <button
@@ -31,13 +31,13 @@ function TransformCards({ id }) {
           onClick={() => store.removeItem(id)}
         >
           <svg
-            viewBox="0 0 24 24"
+            viewBox="0 0 26 24"
             focusable="false"
             role="presentation"
             aria-hidden="true"
             className="h-4 w-4 text-on-background"
             stroke="red"
-            strokeWidth="2px"
+            strokeWidth="4px"
           >
             <line x1="2" y1="2" x2="22" y2="22" />
             <line x1="2" y1="22" x2="22" y2="2" />

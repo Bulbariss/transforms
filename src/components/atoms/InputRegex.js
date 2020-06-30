@@ -12,11 +12,12 @@ const matrix3d = new RegExp(String.raw`^(${num}${comma}){15}(${num})\s*$`);
 const lengthOne = new RegExp(String.raw`^${length}|0$`);
 const rotate3d = new RegExp(String.raw`^((${num}${comma}){3}(${angle})\s*)|0$`);
 const angleOne = new RegExp(String.raw`^(${angle})|0$`);
+const numberOne = new RegExp(String.raw`^${num}$`);
 const threeNumbers = new RegExp(String.raw`^(${num}${comma}){2}${num}$`);
 const oneOrTwoNumbers = new RegExp(String.raw`^${num}(${comma}${num})?$`);
 const oneOrTwoAngles = new RegExp(String.raw`^(${angle}${comma}${angle})|0$`);
 const oneOrTwoLengthPercentages = new RegExp(
-  String.raw`^(${angle}(${comma}${angle}))|0(${comma}0)?$`
+  String.raw`^(${lengthPercentage}(${comma}${lengthPercentage})?)|0(${comma}0)?$`
 );
 const oneLengthPercentage = new RegExp(String.raw`^${lengthPercentage}|0$`);
 const TwoLengthPercentagesAndLength = new RegExp(
@@ -49,6 +50,8 @@ export function CheckInput(regex, str) {
       return rotate3d.test(str);
     case "angleOne":
       return angleOne.test(str);
+    case "numberOne":
+      return numberOne.test(str);
     case "oneOrTwoNumbers":
       return oneOrTwoNumbers.test(str);
     case "threeNumbers":

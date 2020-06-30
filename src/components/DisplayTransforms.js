@@ -19,7 +19,6 @@ function DisplayTransforms() {
 
   function addTransform() {
     const item = getOption(select.current.value);
-    console.log(item);
     store.addItem(item.value, "", item.placeholder, item.regex);
   }
 
@@ -56,12 +55,13 @@ function DisplayTransforms() {
         </div>
       </div>
       <div className="flex px-4 items-left md:items-center py-4 flex-col md:flex-row bg-gray-300">
-        <h1 className="font-bold text-2xl pr-4 pb-2 md:pb-0">Add Transform</h1>
+        <h1 className="font-bold text-2xl pr-4 pb-4 md:pb-0">Add Transform</h1>
         <div>
           <Select ref={select} />
           <button
-            className="bg-blue-700 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2"
+            className="bg-test-200 text-white font-bold w-24 h-8 rounded-lg mt-4 md:mt-0 md:mx-4"
             onClick={() => addTransform()}
+            style={{ height: "36px" }}
           >
             add
           </button>

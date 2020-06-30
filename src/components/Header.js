@@ -1,13 +1,18 @@
 import React from "react";
 import ThemeToggle from "./atoms/ThemeToggle";
+import { Link } from "gatsby";
 
 function Header() {
   return (
-    <div className="h-14 flex justify-between items-center max-w-80 px-4 xxl:px-0">
-      <p className="text-lg font-bold text-on-background">CSS Transforms</p>
+    <div className="h-14 flex justify-between items-center max-w-80 px-4">
+      <Link className="text-lg font-bold text-on-background" to="/">
+        CSS Transforms
+      </Link>
       <div className="flex items-center">
         <ThemeToggle />
-        <p className="text-lg font-bold">About</p>
+        <Link className="text-lg font-bold" to="/about">
+          About
+        </Link>
       </div>
     </div>
   );

@@ -74,6 +74,9 @@ module.exports = {
           "Noto Color Emoji",
         ],
       },
+      borderRadius: {
+        xl: "0.75rem",
+      },
     },
   },
   variants: {},
