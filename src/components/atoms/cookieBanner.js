@@ -30,7 +30,7 @@ function CookieBanner({ isVisible }) {
         id="cookie-banner-container"
         className="max-w-80 bg-grey-300 flex rounded-lg py-4 sm:py-2 items-center flex-col sm:flex-row px-4 w-fit "
       >
-        <p className="h-fit text-coolgrey-900">
+        <p className="h-fit text-coolgrey-900 pb-2 md:pb-0">
           This website uses cookies to ensure you get the best experience.{" "}
           <Link
             to="/privacy-policy"
@@ -42,14 +42,14 @@ function CookieBanner({ isVisible }) {
         </p>
         <div className="sm:ml-16 flex mt-2 sm:mt-0">
           <Button
-            onClick={() => accept()}
+            onClick={() => decline()}
             type="classic"
             className="border-2 border-dark hover:bg-grey-200"
           >
             Decline
           </Button>
           <Button
-            onClick={() => decline()}
+            onClick={() => accept()}
             type="classic"
             className="text-white bg-indigo-700 hover:bg-indigo-600 ml-4"
           >

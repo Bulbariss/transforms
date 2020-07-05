@@ -27,12 +27,12 @@ export function getCookie(cname) {
 }
 
 export function activateCookies() {
-  window["ga-disable-UA-154158494-1"] = false;
+  window["ga-disable-UA-171683260-1"] = false;
   googleAnalytics();
 }
 
 export function deactivateCookies() {
-  window["ga-disable-UA-154158494-1"] = true;
+  window["ga-disable-UA-171683260-1"] = true;
 }
 
 export function googleAnalytics() {
@@ -43,7 +43,7 @@ export function googleAnalytics() {
     dataLayer.push(arguments);
   };
   gtag("js", new Date());
-  gtag("config", "UA-154158494-1");
+  gtag("config", "UA-171683260-1");
 }
 
 // Create cookie that lives 365 days

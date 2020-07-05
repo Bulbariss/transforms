@@ -21,6 +21,12 @@ export const CounterProvider = ({ children }) => {
   transform-origin: center center;
   height: calc(100vh - 7rem);
   max-height: 900px;
+  
+  @media (max-width: 640px) {
+    .container {
+       height: calc(80vh - 7rem); 
+    }
+  }
 }`,
 
     addItem(name, value, placeholder, regex) {
@@ -40,11 +46,10 @@ export const CounterProvider = ({ children }) => {
       });
     },
 
-    getItemsFromLS() {
-      let a = JSON.parse(localStorage.getItem("length"));
-      // let b = a.map((i) => localStorage.getItem(i));
-      console.log(a);
-    },
+    // getItemsFromLS() {
+    //   let a = JSON.parse(localStorage.getItem("length"));
+    //   // let b = a.map((i) => localStorage.getItem(i));
+    // },
 
     getIndexById(id) {
       return store.items.findIndex((h) => h.id === id);

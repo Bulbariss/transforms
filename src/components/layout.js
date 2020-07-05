@@ -4,8 +4,11 @@ import SmartOutline from "./utils/SmartOutline";
 import Header from "./Header";
 import Footer from "./Footer";
 import { CounterProvider } from "./store/Store";
+import ReactGA from "react-ga";
 
 function Layout({ children }) {
+  const trackingId = "UA-171683260-1";
+  ReactGA.initialize(trackingId);
   return (
     <Fragment>
       <CounterProvider>
