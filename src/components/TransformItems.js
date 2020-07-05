@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TransformText from "./atoms/TransformText";
 import TransformImage from "./atoms/TransformImage";
 import TransformCube from "./atoms/TransformCube";
+import Button from "./atoms/Button";
 import TransformContainer from "./molecules/TransformContainer";
 
 function TransformItems() {
@@ -15,35 +16,42 @@ function TransformItems() {
 
   return (
     <section className="max-w-80">
-      <div className="bg-green-600">
-        <TransformContainer>{STATES[activeComp]}</TransformContainer>
-      </div>
+      <TransformContainer>{STATES[activeComp]}</TransformContainer>
 
       <div className="h-14 flex justify-center items-center max-w-80">
-        <button
-          className={`bg-test-100 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2 ${
-            activeComp === "text" ? "bg-test-200" : ""
-          }`}
+        <Button
+          className={`${
+            activeComp === "text"
+              ? "bg-indigo-900 cursor-not-allowed"
+              : "hover:bg-indigo-600 bg-indigo-700"
+          } mx-2`}
           onClick={() => setActiveComp("text")}
+          type="pill"
         >
           Text
-        </button>
-        <button
-          className={`bg-test-100 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2 ${
-            activeComp === "image" ? "bg-test-200" : ""
-          }`}
+        </Button>
+        <Button
+          className={`${
+            activeComp === "image"
+              ? "bg-indigo-900 cursor-not-allowed"
+              : "hover:bg-indigo-600 bg-indigo-700"
+          } mx-2`}
           onClick={() => setActiveComp("image")}
+          type="pill"
         >
           Image
-        </button>
-        <button
-          className={`bg-test-100 hover:bg-blue-900 text-white font-bold w-24 h-8 rounded-lg mx-2 ${
-            activeComp === "cube" ? "bg-test-200" : ""
-          }`}
+        </Button>
+        <Button
+          className={`${
+            activeComp === "cube"
+              ? "bg-indigo-900 cursor-not-allowed"
+              : "hover:bg-indigo-600 bg-indigo-700"
+          } mx-2`}
           onClick={() => setActiveComp("cube")}
+          type="pill"
         >
           Cube
-        </button>
+        </Button>
       </div>
     </section>
   );

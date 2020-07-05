@@ -8,7 +8,7 @@ function TransformText() {
   return useObserver(() => (
     <>
       <p
-        className="text-4xl font-bold item"
+        className="text-4xl font-bold item text-dark"
         style={{
           transform: store.getString(),
         }}

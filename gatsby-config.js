@@ -1,24 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: `Letteweb`,
-    description: `Web development studio`,
-    author: `me`,
+    title: `CSS Transforms`,
+    description: `Playground for CSS transforms.`,
+    author: `Vladimir V`,
   },
   plugins: [
     "gatsby-plugin-eslint",
     `gatsby-plugin-react-helmet`,
-    "gatsby-transformer-sharp",
     `gatsby-plugin-styled-jsx`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-tailwind`,
-        short_name: `starter`,
+        name: `CSS Transforms`,
+        short_name: `CSS Transforms`,
+        lang: `en`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#4dc0b5`,
+        background_color: `#f6f6f6`,
+        theme_color: `#333333`,
         display: `minimal-ui`,
-        icon: `./src/images/tailwind-icon.png`,
+        icon: `./src/images/icon.png`,
       },
     },
     {
@@ -44,14 +44,6 @@ module.exports = {
       options: {
         name: "images",
         path: "./src/images",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        stripMetadata: true,
-        jpegQuality: 85,
-        pngQuality: 85,
       },
     },
     `gatsby-plugin-offline`,

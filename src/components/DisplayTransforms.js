@@ -4,6 +4,7 @@ import Select from "./atoms/Select";
 import { appContext } from "./store/Store";
 import { useObserver } from "mobx-react-lite";
 import { selectOptions } from "./atoms/SelectOptions";
+import Button from "./atoms/Button";
 
 function DisplayTransforms() {
   const store = useContext(appContext);
@@ -39,7 +40,7 @@ function DisplayTransforms() {
 
   return useObserver(() => (
     <section className="max-w-80">
-      <div className="min-h-14 flex items-center px-4 bg-gray-200 relative">
+      <div className="min-h-14 flex items-center px-4 bg-grey-100 relative">
         <button
           onClick={() => copy()}
           ref={ref}
@@ -49,23 +50,22 @@ function DisplayTransforms() {
         </button>
         <div
           ref={ref}
-          className="absolute text-lg font-bold w-full h-full leading-relaxed bg-gray-200 flex hidden items-center justify-center"
+          className="absolute text-lg font-bold w-full h-full leading-relaxed bg-grey-100 flex hidden items-center justify-center"
         >
           <span>copied!</span>
         </div>
       </div>
-      <div className="flex px-4 items-left md:items-center py-4 flex-col md:flex-row bg-gray-300">
-        <h1 className="font-bold text-2xl pr-4 pb-4 md:pb-0">Add Transform</h1>
-        <div>
-          <Select ref={select} />
-          <button
-            className="bg-test-200 text-white font-bold w-24 h-8 rounded-lg mt-4 md:mt-0 md:mx-4"
-            onClick={() => addTransform()}
-            style={{ height: "36px" }}
-          >
-            add
-          </button>
-        </div>
+      <div className="flex px-4 items-left md:items-center py-4 flex-col md:flex-row bg-grey-200">
+        <h1 className="font-bold text-3xl pr-4 pb-4 md:pb-0">Add Transform</h1>
+        <Select ref={select} />
+        <Button
+          onClick={() => addTransform()}
+          type="pill"
+          style={{ height: "2.375rem", fontSize: "1.125rem" }}
+          className="md:mx-2 mt-4 md:mt-0 bg-indigo-700 hover:bg-indigo-600"
+        >
+          Add
+        </Button>
       </div>
       <TransformCards />
     </section>

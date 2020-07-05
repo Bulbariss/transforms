@@ -13,7 +13,11 @@ function NotFoundPage() {
           <h1 className="text-3xl font-bold m-auto w-fit mb-4">
             Page not found
           </h1>
-          <Link to="/" className="btn btn-cc btn-lg bg-indigo-700 text-white">
+          <Link
+            to="/"
+            className="btn btn-cc btn-lg bg-indigo-700 hover:bg-indigo-600 transition-colors duration-100
+             text-white"
+          >
             Back to main page
           </Link>
         </div>

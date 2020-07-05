@@ -15,19 +15,19 @@ canvas {
 
 * {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: greyscale;
   text-rendering: optimizeLegibility;
 }
 
-input {
+/* input {
   vertical-align: middle;
   line-height: normal;
-}
+} */
 
-input::placeholder,
+/* input::placeholder,
 textarea::placeholder {
   color: #52606d;
-  /* color: #3C4859; */
+  color: #3C4859;
 }
 
 input:-ms-input-placeholder,
@@ -40,7 +40,7 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #52606d;
   line-height: 1.5;
-}
+} */
 
 ::selection {
   background: #000;
@@ -154,7 +154,7 @@ textarea::-webkit-input-placeholder {
   color: #333333;
 }
 
-.text-muted-gray {
+.text-muted-grey {
   color: #414141;
 }
 
@@ -199,7 +199,7 @@ textarea::-webkit-input-placeholder {
   cursor: pointer;
 }
 
-.bg-gray-nice {
+.bg-grey-nice {
   background-color: #f6f5f4;
 }
 
@@ -1109,59 +1109,58 @@ a.link-animation {
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-input[type="email"],
+/* input[type="email"],
 input[type="number"],
 input[type="search"],
 input[type="text"],
 input[type="tel"],
 input[type="url"],
-input[type="password"],
-textarea,
-select {
+input[type="password"] {
+  textarea,
+  select {
   height: 38px;
   padding: 6px 10px;
-  /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fcfbfb;
   border: 2px solid #e2e5e8;
   border-radius: 4px;
   box-shadow: none;
   box-sizing: border-box;
-}
+} */
 
 /* Removes awkward default styles on some inputs for iOS */
-input[type="email"],
+/* input[type="email"],
 input[type="number"],
 input[type="search"],
 input[type="text"],
 input[type="tel"],
 input[type="url"],
-input[type="password"],
+input[type="password"]
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
+} */
 
-textarea {
+/* textarea {
   min-height: 100px;
   padding-top: 6px;
   padding-bottom: 6px;
-}
+} */
 
-input[type="email"]:focus,
+/* input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="url"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-select:focus {
+input[type="password"]:focus {
+  textarea:focus,
+  select:focus {
   border: 2px solid #3e4c59;
   outline: 0;
-}
+} */
 
-label,
+/* label,
 legend {
   display: block;
   margin-bottom: 0.5rem;
@@ -1186,7 +1185,7 @@ label > .label-body {
 
 #disabled-option select {
   color: red;
-}
+} */
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

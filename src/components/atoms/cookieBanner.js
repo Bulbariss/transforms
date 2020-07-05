@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import { handleRejectCookies, handleAllowCookies } from "../utils/CookieUtils";
+import Button from "./Button";
 
 function CookieBanner({ isVisible }) {
   let [visibility, setVisibility] = useState();
@@ -21,39 +22,39 @@ function CookieBanner({ isVisible }) {
 
   return (
     <div
-      className={`fixed bottom-0 right-0 w-full pb-4 sm:px-4 z-50 ${
+      className={`fixed bottom-0 right-0 w-full pb-6 px-2 sm:px-4 z-50 text-dark ${
         !visibility && "hidden"
       }`}
     >
       <div
         id="cookie-banner-container"
-        className="max-w-80 bg-indigo-200 flex rounded-lg py-4 sm:py-2 items-center flex-col sm:flex-row px-4 w-fit "
+        className="max-w-80 bg-grey-300 flex rounded-lg py-4 sm:py-2 items-center flex-col sm:flex-row px-4 w-fit "
       >
-        <p className="h-fit text-coolGray-900">
-          This website uses cookies to ensure you get the best experience on our
-          website.{" "}
+        <p className="h-fit text-coolgrey-900">
+          This website uses cookies to ensure you get the best experience.{" "}
           <Link
-            to="/privacy_policy"
-            className="text-coolGray-600 hover:text-coolGray-400 underline"
+            to="/privacy-policy"
+            rel="canonical"
+            className="text-coolgrey-600 hover:text-coolgrey-400 underline"
           >
-            Our privacy policy
+            Read privacy policy
           </Link>
         </p>
         <div className="sm:ml-16 flex mt-2 sm:mt-0">
-          <button
+          <Button
             onClick={() => accept()}
-            id="btn-reject-cookies"
-            className="btn-cc text-coolGray-800 hover:text-coolGray-600"
+            type="classic"
+            className="border-2 border-dark hover:bg-grey-200"
           >
             Decline
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={() => decline()}
-            id="btn-allow-cookies"
-            className="btn-cc text-white bg-indigo-700 hover:bg-indigo-600 ml-4 rounded-lg "
+            type="classic"
+            className="text-white bg-indigo-700 hover:bg-indigo-600 ml-4"
           >
             Allow cookies
-          </button>
+          </Button>
         </div>
       </div>
     </div>

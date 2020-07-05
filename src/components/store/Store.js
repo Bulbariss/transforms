@@ -15,11 +15,12 @@ export const CounterProvider = ({ children }) => {
       placeholder: "",
     },
     itemCss: `.item {
-  color: #333;
   transition: all 0.3s ease-in;
 }`,
     containerCss: `.container {
-  transition: all 0.3s ease-in;
+  transform-origin: center center;
+  height: calc(100vh - 7rem);
+  max-height: 900px;
 }`,
 
     addItem(name, value, placeholder, regex) {
@@ -30,6 +31,7 @@ export const CounterProvider = ({ children }) => {
         placeholder: placeholder,
         regex: regex,
       });
+      // setCookie("items", store.items, 365);
     },
 
     getItemById(id) {
@@ -38,12 +40,19 @@ export const CounterProvider = ({ children }) => {
       });
     },
 
+    getItemsFromLS() {
+      let a = JSON.parse(localStorage.getItem("length"));
+      // let b = a.map((i) => localStorage.getItem(i));
+      console.log(a);
+    },
+
     getIndexById(id) {
       return store.items.findIndex((h) => h.id === id);
     },
 
     removeItem(id) {
       store.items = store.items.filter((h) => h.id !== id);
+      // setCookie("items", store.items, 365);
     },
 
     changeValue(index, newValue) {

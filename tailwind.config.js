@@ -56,6 +56,7 @@ module.exports = {
       },
       height: {
         "h-14": "3.5rem",
+        "h-96": "24rem",
       },
       fontFamily: {
         sans: [
@@ -75,6 +76,7 @@ module.exports = {
         ],
       },
       borderRadius: {
+        sd: "0.3125rem",
         xl: "0.75rem",
       },
     },

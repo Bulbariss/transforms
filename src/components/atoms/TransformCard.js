@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { appContext } from "../store/Store";
 import { useObserver } from "mobx-react-lite";
 import { CheckInput } from "./InputRegex";
+import Input from "./Input";
+import CloseButton from "./CloseButton";
 
 function TransformCards({ id }) {
   const store = useContext(appContext);
@@ -18,47 +20,35 @@ function TransformCards({ id }) {
     if (CheckInput(store.items[index].regex, input)) {
       setBorder("");
     } else {
-      setBorder("border-red-500");
+      setBorder("border-red");
     }
   }
 
   return useObserver(() => (
-    <div className="h-24 w-full md:w-64 rounded-xl bg-gray-400 m-2 px-4 py-2">
-      <div className="flex justify-between">
-        <p className="text-lg font-bold pb-2">{store.items[index].name}</p>
-        <button
-          className="text-red-600 -mt-2"
+    <div className="w-full md:w-64 rounded-xl bg-grey-200 m-2 px-4 py-3 flex flex-col items-center">
+      <div className="flex justify-between items-center pb-2 w-full">
+        <p className="text-lg font-bold">{store.items[index].name}</p>
+        <CloseButton
+          style={{ marginRight: "-6px" }}
           onClick={() => store.removeItem(id)}
-        >
-          <svg
-            viewBox="0 0 26 24"
-            focusable="false"
-            role="presentation"
-            aria-hidden="true"
-            className="h-4 w-4 text-on-background"
-            stroke="red"
-            strokeWidth="4px"
-          >
-            <line x1="2" y1="2" x2="22" y2="22" />
-            <line x1="2" y1="22" x2="22" y2="2" />
-          </svg>
-        </button>
-      </div>
-      <label className="" htmlFor="input-name">
-        <input
-          className={`w-full rounded-lg ${border}`}
-          type="text"
-          placeholder={store.items[index].placeholder}
-          value={input}
-          onChange={() => handleOnChange(event)}
-          onBlur={() => validateName()}
+          type="default"
         />
-      </label>
+      </div>
+      <Input
+        className={`w-full bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md ${border}`}
+        type="text"
+        placeholder={store.items[index].placeholder}
+        value={input}
+        onChange={() => handleOnChange(event)}
+        onBlur={() => validateName()}
+      />
       <style jsx global>{`
-        .border-red-500 {
-          --border-opacity: 1 !important;
-          border-color: #e75e5e !important;
-          border-color: rgba(231, 94, 94, var(--border-opacity)) !important;
+        .border-red {
+          border-color: red !important;
+        }
+        input {
+          vertical-align: middle;
+          line-height: normal;
         }
       `}</style>
     </div>

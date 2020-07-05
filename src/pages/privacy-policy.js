@@ -8,8 +8,8 @@ function PrivacyPolicy() {
     <Layout>
       <SEO title="Privacy Policy" />
       <section>
-        <div className="px-6 sm:px-10 lg:px-16 mx-auto pt-24 py-10 text-lg relative max-w-2xl text-muted-black">
-          <h1 className="mb-4 text-4xl font-bold">Privacy Policy</h1>
+        <div className="px-4 sm:px-10 mx-auto pt-12 py-10 text-lg relative max-w-2xl">
+          <h1 className="mb-6 text-4xl font-bold">Privacy Policy</h1>
           <h2 className="mb-4 text-2xl font-bold">What Are Cookies</h2>
           <p className="mb-6">
             As is common practice with almost all professional websites this
@@ -63,10 +63,10 @@ function PrivacyPolicy() {
               </a>
             </li>
           </ul>
-          <h2 className="mb-4 text-2xl font-bold">Contact Us</h2>
-          <p className="mb-4">
+          <h2 className="mb-4 text-2xl font-bold">Contact Me</h2>
+          <p className="mb-6">
             If you have any questions about this Privacy Policy, You can contact
-            us:{" "}
+            me:{" "}
             <a href="mailto:name@email.com" className="underline">
               test@test.com
             </a>
