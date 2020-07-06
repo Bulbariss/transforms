@@ -8,6 +8,7 @@ module.exports = {
     "gatsby-plugin-eslint",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-jsx`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

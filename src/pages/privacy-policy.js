@@ -1,9 +1,14 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { getCookie, googleAnalytics } from "../components/utils/CookieUtils";
 
 function PrivacyPolicy() {
+  useEffect(() => {
+    if (getCookie("consent")) {
+      googleAnalytics();
+    }
+  }, []);
   return (
     <Layout>
       <SEO title="Privacy Policy" />

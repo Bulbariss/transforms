@@ -1,10 +1,15 @@
-import React from "react";
-
+import React, {useEffect} from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { Link } from "gatsby";
+import { getCookie, googleAnalytics } from "../components/utils/CookieUtils";
 
 function NotFoundPage() {
+  useEffect(() => {
+    if (getCookie("consent")) {
+      googleAnalytics();
+    }
+  }, []);
   return (
     <Layout>
       <SEO title="404: Not found" />

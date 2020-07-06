@@ -16,7 +16,7 @@ function CookieButtons({ classes }) {
   return (
     <>
       <div className={classes}>
-        <Link className="hover-opacity" to="/privacy-policy" rel="canonical">
+        <Link className="hover-opacity" to="/privacy-policy">
           Privacy Policy &#32;
         </Link>
         <span className="px-1">|</span>

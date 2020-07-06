@@ -1,13 +1,18 @@
-import React from "react";
-// import { Link, graphql, useStaticQuery } from "gatsby";
+import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import TransformItems from "../components/TransformItems";
 import DisplayTransforms from "../components/DisplayTransforms";
 import ItemCss from "../components/molecules/ItemCss";
 import ContainerCss from "../components/molecules/ContainerCss";
+import { getCookie, googleAnalytics } from "../components/utils/CookieUtils";
 
 function IndexPage() {
+  useEffect(() => {
+    if (getCookie("consent")) {
+      googleAnalytics();
+    }
+  }, []);
   return (
     <Layout>
       <SEO

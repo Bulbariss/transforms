@@ -12,7 +12,7 @@ function CookieBanner({ isVisible }) {
 
   useEffect(() => {
     setVisibility(isVisible["visible"]);
-}, [isVisible]);
+  }, [isVisible]);
 
   function accept() {
     handleAllowCookies();
@@ -39,7 +39,6 @@ function CookieBanner({ isVisible }) {
           This website uses cookies to ensure you get the best experience.{" "}
           <Link
             to="/privacy-policy"
-            rel="canonical"
             className="text-coolgrey-600 hover:text-coolgrey-400 underline"
           >
             Read privacy policy
