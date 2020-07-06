@@ -5,39 +5,28 @@ import css from "styled-jsx/css";
 
 const styles = css`
   .front {
-    /* background: rgba(90, 90, 90, 0.7); */
     background: hsla(237, 65%, 50%, 0.7);
     transform: translateZ(5rem);
   }
   .back {
-    /* background: rgba(0, 210, 0, 0.7); */
     background: hsla(0, 65%, 50%, 0.7);
     transform: rotateY(180deg) translateZ(5rem);
   }
   .right {
-    /* background: rgba(210, 0, 0, 0.7); */
     background: hsla(116, 52%, 50%, 0.7)
     transform: rotateY(90deg) translateZ(5rem);
   }
   .left {
-    /* background: rgba(0, 0, 210, 0.7); */
     background: hsla(177, 65%, 50%, 0.7);
     transform: rotateY(-90deg) translateZ(5rem);
   }
   .top {
-    /* background: rgba(210, 210, 0, 0.7); */
     background: hsla(278, 65%, 50%, 0.7);
     transform: rotateX(90deg) translateZ(5rem);
   }
   .bottom {
-    /* background: rgba(210, 0, 210, 0.7); */
     background: hsla(319, 65%, 50%, 0.7);
     transform: rotateX(-90deg) translateZ(5rem);
-  }
-
-  .cube {
-    perspective: 550px;
-    transform-style: preserve-3d;
   }
 `;
 
@@ -48,7 +37,7 @@ function TransformCube() {
   return useObserver(() => (
     <>
       <div
-        className="cube item w-40 h-40"
+        className="item w-40 h-40"
         style={{
           transform: store.getString(),
         }}

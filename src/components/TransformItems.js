@@ -17,8 +17,7 @@ function TransformItems() {
   return (
     <section className="max-w-80">
       <TransformContainer>{STATES[activeComp]}</TransformContainer>
-
-      <div className="h-14 flex justify-center items-center max-w-80">
+      <div className="h-14 flex justify-center items-center max-w-80 relative">
         <Button
           className={`${
             activeComp === "text"

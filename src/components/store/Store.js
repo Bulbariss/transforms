@@ -16,17 +16,17 @@ export const CounterProvider = ({ children }) => {
     },
     itemCss: `.item {
   transition: all 0.3s ease-in;
+  perspective: 550px;
+  transform-style: preserve-3d;
 }`,
     containerCss: `.container {
-  transform-origin: center center;
   height: calc(100vh - 7rem);
   max-height: 900px;
+}
   
-  @media (max-width: 640px) {
-    .container {
-       height: calc(80vh - 7rem); 
-    }
-  }
+@media (max-width: 640px) {
+  .container {
+  height: calc(80vh - 7rem); 
 }`,
 
     addItem(name, value, placeholder, regex) {

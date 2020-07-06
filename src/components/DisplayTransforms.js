@@ -39,7 +39,7 @@ function DisplayTransforms() {
   }
 
   return useObserver(() => (
-    <section className="max-w-80">
+    <section className="max-w-80 relative">
       <div className="min-h-14 flex items-center px-4 bg-grey-100 relative">
         <button
           onClick={() => copy()}
@@ -50,7 +50,7 @@ function DisplayTransforms() {
         </button>
         <div
           ref={ref}
-          className="absolute text-lg font-bold w-full h-full leading-relaxed bg-grey-100 flex hidden items-center justify-center"
+          className="absolute text-lg font-bold w-full h-full leading-relaxed bg-grey-100 flex hidden items-center right-0 justify-center"
         >
           <span>copied!</span>
         </div>

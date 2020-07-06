@@ -5,7 +5,7 @@ import Arrow from "./arrow.svg";
 const Select = (props, ref) => {
   return (
     <select
-      className="w-full md:w-64 rounded-lg bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md"
+      className="w-full md:w-64 bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md"
       {...props}
       ref={ref}
       style={{ backgroundImage: `url(${Arrow})` }}

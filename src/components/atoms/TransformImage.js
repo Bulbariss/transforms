@@ -13,7 +13,7 @@ function TransformText() {
           transform: store.getString(),
         }}
         src={image}
-        alt="Woman paying for a purchase"
+        alt="Palm trees"
       />
       <style>{store.itemCss}</style>
     </>

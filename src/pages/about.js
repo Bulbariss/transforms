@@ -1,7 +1,7 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { getCookie, googleAnalytics } from "../components/utils/CookieUtils";
 
 const transformsList = [
   {
@@ -185,6 +185,11 @@ function About() {
       </li>
     );
   });
+  useEffect(() => {
+    if (getCookie("consent")) {
+      googleAnalytics();
+    }
+  }, []);
   return (
     <Layout>
       <SEO title="About" />
@@ -209,7 +214,7 @@ function About() {
           </div>
           <div>
             <h2 className="mb-4 text-2xl font-bold">
-              Transforms value reference
+              Transform values reference
             </h2>
             <ul className="list-disc padding-inline-start mb-6">
               {transforms}

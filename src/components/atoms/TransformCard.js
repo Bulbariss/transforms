@@ -27,7 +27,9 @@ function TransformCards({ id }) {
   return useObserver(() => (
     <div className="w-full md:w-64 rounded-xl bg-grey-200 m-2 px-4 py-3 flex flex-col items-center">
       <div className="flex justify-between items-center pb-2 w-full">
-        <p className="text-lg font-bold">{store.items[index].name}</p>
+        <label htmkFor="function" className="text-lg font-bold">
+          {store.items[index].name}
+        </label>
         <CloseButton
           style={{ marginRight: "-6px" }}
           onClick={() => store.removeItem(id)}
@@ -35,6 +37,7 @@ function TransformCards({ id }) {
         />
       </div>
       <Input
+        id="function"
         className={`w-full bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md ${border}`}
         type="text"
         placeholder={store.items[index].placeholder}

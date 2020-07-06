@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import { handleRejectCookies, handleAllowCookies } from "../utils/CookieUtils";
+import {
+  handleRejectCookies,
+  handleAllowCookies,
+  googleAnalytics,
+} from "../utils/CookieUtils";
 import Button from "./Button";
 
 function CookieBanner({ isVisible }) {
@@ -8,10 +12,11 @@ function CookieBanner({ isVisible }) {
 
   useEffect(() => {
     setVisibility(isVisible["visible"]);
-  }, [isVisible]);
+}, [isVisible]);
 
   function accept() {
     handleAllowCookies();
+    googleAnalytics();
     setVisibility(false);
   }
 

@@ -7,21 +7,23 @@ const angle = `${num}${angleUnits}`;
 const lengthPercentage = `${num}(${lengthUnits}|%)`;
 const comma = `\\s*,\\s*`;
 
-const matrix = new RegExp(String.raw`^(${num}${comma}){5}(${num})\s*$`);
-const matrix3d = new RegExp(String.raw`^(${num}${comma}){15}(${num})\s*$`);
-const lengthOne = new RegExp(String.raw`^${length}|0$`);
-const rotate3d = new RegExp(String.raw`^((${num}${comma}){3}(${angle})\s*)|0$`);
-const angleOne = new RegExp(String.raw`^(${angle})|0$`);
-const numberOne = new RegExp(String.raw`^${num}$`);
-const threeNumbers = new RegExp(String.raw`^(${num}${comma}){2}${num}$`);
-const oneOrTwoNumbers = new RegExp(String.raw`^${num}(${comma}${num})?$`);
-const oneOrTwoAngles = new RegExp(String.raw`^(${angle}${comma}${angle})|0$`);
-const oneOrTwoLengthPercentages = new RegExp(
-  String.raw`^(${lengthPercentage}(${comma}${lengthPercentage})?)|0(${comma}0)?$`
+const matrix = new RegExp(String.raw`^((${num}${comma}){5}(${num})\s*)$`);
+const matrix3d = new RegExp(String.raw`^((${num}${comma}){15}(${num})\s*)$`);
+const lengthOne = new RegExp(String.raw`^(${length}|0)$`);
+const rotate3d = new RegExp(
+  String.raw`^(((${num}${comma}){3}(${angle})\s*)|0)$`
 );
-const oneLengthPercentage = new RegExp(String.raw`^${lengthPercentage}|0$`);
+const angleOne = new RegExp(String.raw`^((${angle})|0)$`);
+const numberOne = new RegExp(String.raw`^(${num})$`);
+const threeNumbers = new RegExp(String.raw`^((${num}${comma}){2}${num})$`);
+const oneOrTwoNumbers = new RegExp(String.raw`^(${num}(${comma}${num})?)$`);
+const oneOrTwoAngles = new RegExp(String.raw`^((${angle}${comma}${angle})|0)$`);
+const oneOrTwoLengthPercentages = new RegExp(
+  String.raw`^((${lengthPercentage}(${comma}${lengthPercentage})?)|0(${comma}0)?)$`
+);
+const oneLengthPercentage = new RegExp(String.raw`^(${lengthPercentage}|0)$`);
 const TwoLengthPercentagesAndLength = new RegExp(
-  String.raw`^((${lengthPercentage}|0)${comma}(${lengthPercentage}|0)${comma}(${length}|0))|0$`
+  String.raw`^(((${lengthPercentage}|0)${comma}(${lengthPercentage}|0)${comma}(${length}|0))|0)$`
 );
 
 // const matrix 6 numbers separated by comma
@@ -65,7 +67,6 @@ export function CheckInput(regex, str) {
     case "oneLengthPercentage":
       return oneLengthPercentage.test(str);
     default:
-      console.log("No regex found");
       break;
   }
 }
