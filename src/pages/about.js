@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { getCookie, googleAnalytics } from "../components/utils/CookieUtils";
 
 const transformsList = [
   {
@@ -185,11 +184,7 @@ function About() {
       </li>
     );
   });
-  useEffect(() => {
-    if (getCookie("consent")) {
-      googleAnalytics();
-    }
-  }, []);
+
   return (
     <Layout>
       <SEO title="About" />
@@ -213,19 +208,19 @@ function About() {
             </p>
           </div>
           <div>
-            <h2 className="mb-4 text-2xl font-bold">
+            <h3 className="mb-4 text-2xl font-bold">
               Transform values reference
-            </h2>
+            </h3>
             <ul className="list-disc padding-inline-start mb-6">
               {transforms}
             </ul>
           </div>
           <div>
-            <h2 className="mb-4 text-2xl font-bold">Input type Reference</h2>
+            <h4 className="mb-4 text-2xl font-bold">Input type Reference</h4>
             <ul className="list-disc padding-inline-start mb-6">{inputs}</ul>
           </div>
           <div>
-            <h2 className="mb-4 text-2xl font-bold">Contact Me</h2>
+            <h5 className="mb-4 text-2xl font-bold">Contact Me</h5>
             <p className="mb-6">
               If you have any questions, you can contact me:{" "}
               <a href="mailto:name@email.com" className="underline">

@@ -27,6 +27,7 @@ export const CounterProvider = ({ children }) => {
 @media (max-width: 640px) {
   .container {
   height: calc(80vh - 7rem); 
+  }
 }`,
 
     addItem(name, value, placeholder, regex) {

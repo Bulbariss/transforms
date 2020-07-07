@@ -14,7 +14,6 @@ const Textarea = (props, ref) => {
       <style jsx>{`
         textarea::placeholder {
           color: #52606d;
-          /* color: #3C4859; */
           line-height: 1.5;
         }
 
@@ -30,22 +29,13 @@ const Textarea = (props, ref) => {
 
         textarea {
           padding: 6px 10px;
-          /* The 6px vertically centers text on FF, ignored by Webkit */
-           {
-            /* border: 2px solid #e2e5e8; */
-          }
           box-shadow: none;
           box-sizing: border-box;
-          -webkit-appearance: none;
-          -moz-appearance: none;
           appearance: none;
           min-height: 100px;
         }
 
         textarea:focus {
-           {
-            /* border: 2px solid #3e4c59; */
-          }
           outline: 0;
         }
       `}</style>

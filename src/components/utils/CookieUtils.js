@@ -35,17 +35,8 @@ export function deactivateCookies() {
 }
 
 export function googleAnalytics() {
-  // window.dataLayer = window.dataLayer || [];
-
-  // const gtag = () => {
-  //   // eslint-disable-next-line
-  //   dataLayer.push(arguments);
-  // };
-  // gtag("js", new Date());
-  // gtag("config", "UA-171683260-1");
   window.dataLayer = window.dataLayer || [];
   function gtag() {
-    console.log("object");
     // eslint-disable-next-line
     dataLayer.push(arguments);
   }

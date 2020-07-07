@@ -8,11 +8,6 @@ html {
   height: 100%;
 }
 
-canvas {
-  max-width: 100vw;
-  max-height: 100vh;
-}
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: greyscale;
@@ -43,8 +38,8 @@ textarea::-webkit-input-placeholder {
 } */
 
 ::selection {
-  background: #000;
-  color: #fff;
+  background: #ccff00;
+  color: #000;
   text-shadow: none;
 }
 
@@ -166,13 +161,6 @@ textarea::-webkit-input-placeholder {
   height: fit-content;
 }
 
-.let-space-3 {
-  letter-spacing: -3px;
-}
-
-.let-space-5 {
-  letter-spacing: -5px;
-}
 
 .color-invert {
   filter: invert(1);
@@ -210,13 +198,11 @@ textarea::-webkit-input-placeholder {
 
 .center-x {
   top: 50%;
-  -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
 .center-y {
   right: 50%;
-  -webkit-transform: translateX(+50%);
   transform: translateX(+50%);
 }
 
@@ -242,18 +228,4 @@ textarea::-webkit-input-placeholder {
   .scroll-lock {
     overflow: hidden;
   }
-
-  #blob-top {
-    height: 50vh;
-  }
-
-  #blob-bottom {
-    height: 50vh;
-    bottom: -8%;
-  }
-
-  #arrow-studio-page {
-    width: 40px;
-  }
 }
-

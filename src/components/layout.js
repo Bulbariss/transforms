@@ -1,11 +1,18 @@
 import PropTypes from "prop-types";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import SmartOutline from "./utils/SmartOutline";
 import Header from "./Header";
 import Footer from "./Footer";
 import { CounterProvider } from "./store/Store";
+import { getCookie, googleAnalytics } from "../components/utils/CookieUtils";
 
 function Layout({ children }) {
+  useEffect(() => {
+    if (getCookie("consent") === "true") {
+      googleAnalytics();
+    }
+  }, []);
+
   return (
     <Fragment>
       <CounterProvider>

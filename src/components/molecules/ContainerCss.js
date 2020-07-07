@@ -14,8 +14,10 @@ function ContainerCss() {
 
   return useObserver(() => (
     <div className="w-full bg-grey-200 p-4 relative">
-      <h3 className="font-bold text-3xl pb-2">Container CSS</h3>
-      <Textarea value={input} onChange={handleOnChange} placeholder="test" />
+      <label htmlFor="container" className="font-bold text-3xl pb-2">
+        Container CSS
+      </label>
+      <Textarea value={input} onChange={handleOnChange} id="container" />
     </div>
   ));
 }

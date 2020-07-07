@@ -3,6 +3,7 @@ module.exports = {
     title: `CSS Transforms`,
     description: `Playground for CSS transforms.`,
     author: `Vladimir V`,
+    siteUrl: "https://plvs.ru",
   },
   plugins: [
     "gatsby-plugin-eslint",
@@ -20,6 +21,7 @@ module.exports = {
         theme_color: `#333333`,
         display: `minimal-ui`,
         icon: `./src/images/icon.png`,
+        purpose: "any maskable",
       },
     },
     {
@@ -40,19 +42,6 @@ module.exports = {
         purgeOnly: [`src/css/style.css`],
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images",
-      },
-    },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: "UA-171683260-1",
-    //   },
-    // },
     `gatsby-plugin-offline`,
   ],
 };

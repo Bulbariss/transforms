@@ -14,8 +14,10 @@ function ItemCss() {
 
   return useObserver(() => (
     <div className="w-full bg-grey-200 p-4 relative">
-      <h3 className="font-bold text-3xl pb-2">Item CSS</h3>
-      <Textarea value={input} onChange={handleOnChange} placeholder="test" />
+      <label htmlFor="item" className="font-bold text-3xl pb-2">
+        Item CSS
+      </label>
+      <Textarea value={input} onChange={handleOnChange} id="item" />
     </div>
   ));
 }

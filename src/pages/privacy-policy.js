@@ -1,14 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { getCookie, googleAnalytics } from "../components/utils/CookieUtils";
 
 function PrivacyPolicy() {
-  useEffect(() => {
-    if (getCookie("consent")) {
-      googleAnalytics();
-    }
-  }, []);
   return (
     <Layout>
       <SEO title="Privacy Policy" />
@@ -25,7 +19,7 @@ function PrivacyPolicy() {
             cookies from being stored however this may downgrade or
             &apos;break&apos; certain elements of the sites functionality.
           </p>
-          <h2 className="mb-4 text-2xl font-bold">How We Use Cookies</h2>
+          <h3 className="mb-4 text-2xl font-bold">How Cookies Are Used</h3>
           <p className="mb-4">
             When you use and access the Service, we may place a number of
             cookies files in your web browser. We use cookies for the following
@@ -49,7 +43,7 @@ function PrivacyPolicy() {
             </li>
           </ul>
 
-          <h2 className="mb-4 text-2xl font-bold">Analytics</h2>
+          <h4 className="mb-4 text-2xl font-bold">Analytics</h4>
           <p className="mb-4">
             We may use third-party Service providers to monitor and analyze the
             use of our Service.
@@ -66,15 +60,17 @@ function PrivacyPolicy() {
               >
                 support.google.com/analytics/answer/6004245?hl=en
               </a>
+              .
             </li>
           </ul>
-          <h2 className="mb-4 text-2xl font-bold">Contact Me</h2>
+          <h5 className="mb-4 text-2xl font-bold">Contact Me</h5>
           <p className="mb-6">
             If you have any questions about this Privacy Policy, You can contact
             me:{" "}
             <a href="mailto:name@email.com" className="underline">
               test@test.com
             </a>
+            .
           </p>
         </div>
       </section>
