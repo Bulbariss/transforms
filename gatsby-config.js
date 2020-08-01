@@ -21,7 +21,7 @@ module.exports = {
         theme_color: `#333333`,
         display: `minimal-ui`,
         icon: `./src/images/icon.png`,
-        purpose: "any maskable",
+        purpose: "maskable",
       },
     },
     {
@@ -29,6 +29,7 @@ module.exports = {
       options: {
         postCssPlugins: [
           require(`tailwindcss`)(`./tailwind.config.js`),
+          require("postcss-100vh-fix"),
           require(`autoprefixer`),
           require(`cssnano`),
         ],

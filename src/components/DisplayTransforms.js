@@ -62,9 +62,22 @@ function DisplayTransforms() {
           onClick={() => addTransform()}
           type="pill"
           style={{ height: "2.375rem", fontSize: "1.125rem" }}
-          className="md:mx-2 mt-4 md:mt-0 bg-indigo-700 hover:bg-indigo-600"
+          className="md:mx-4 mt-4 md:mt-0 bg-indigo-700 hover:bg-indigo-600 text-white"
         >
           Add
+        </Button>
+        <Button
+          onClick={() => (store.items = [])}
+          type="pill"
+          style={{
+            height: "2.375rem",
+            fontSize: "1.125rem",
+            width: "192px",
+            padding: "0 1rem",
+          }}
+          className="mt-4 md:mt-0 bg-red-600 hover:bg-red-500 text-white"
+        >
+          Remove All
         </Button>
       </div>
       <TransformCards />

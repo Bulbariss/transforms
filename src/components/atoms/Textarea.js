@@ -4,11 +4,15 @@ const Textarea = (props, ref) => {
   return (
     <>
       <textarea
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
         ref={ref}
         maxLength="180"
         rows="6"
         wrap="hard"
-        className="h-64 w-full bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md"
+        className="h-64 w-full bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md text-base"
         {...props}
       ></textarea>
       <style jsx>{`

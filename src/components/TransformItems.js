@@ -17,13 +17,16 @@ function TransformItems() {
   return (
     <section className="max-w-80">
       <TransformContainer>{STATES[activeComp]}</TransformContainer>
-      <div className="h-14 flex justify-center items-center max-w-80 relative">
+      <div
+        className="h-14 flex justify-center items-center max-w-80 absolute w-full"
+        style={{ marginTop: "-3.5rem" }}
+      >
         <Button
           className={`${
             activeComp === "text"
               ? "bg-indigo-900 cursor-not-allowed"
               : "hover:bg-indigo-600 bg-indigo-700"
-          } mx-2`}
+          } mx-2 text-white`}
           onClick={() => setActiveComp("text")}
           type="pill"
         >
@@ -34,7 +37,7 @@ function TransformItems() {
             activeComp === "image"
               ? "bg-indigo-900 cursor-not-allowed"
               : "hover:bg-indigo-600 bg-indigo-700"
-          } mx-2`}
+          } mx-2 text-white`}
           onClick={() => setActiveComp("image")}
           type="pill"
         >
@@ -45,7 +48,7 @@ function TransformItems() {
             activeComp === "cube"
               ? "bg-indigo-900 cursor-not-allowed"
               : "hover:bg-indigo-600 bg-indigo-700"
-          } mx-2`}
+          } mx-2 text-white`}
           onClick={() => setActiveComp("cube")}
           type="pill"
         >

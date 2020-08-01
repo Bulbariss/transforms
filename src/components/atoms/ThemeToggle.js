@@ -26,6 +26,7 @@ function ThemeToggle() {
     } else {
       setIsMoon(darkModeMediaQuery.matches);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

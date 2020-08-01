@@ -20,14 +20,8 @@ export const CounterProvider = ({ children }) => {
   transform-style: preserve-3d;
 }`,
     containerCss: `.container {
-  height: calc(100vh - 7rem);
   max-height: 900px;
-}
-  
-@media (max-width: 640px) {
-  .container {
-  height: calc(80vh - 7rem); 
-  }
+  min-height: 400px;
 }`,
 
     addItem(name, value, placeholder, regex) {

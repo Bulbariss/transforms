@@ -9,10 +9,7 @@ import ContainerCss from "../components/molecules/ContainerCss";
 function IndexPage() {
   return (
     <Layout>
-      <SEO
-        title="CSS Transforms"
-        keywords={["CSS transforms", "transform-function"]}
-      />
+      <SEO title="Home" keywords={["CSS transforms", "transform-function"]} />
       <TransformItems />
       <DisplayTransforms />
       <section className="max-w-80 flex flex-col md:flex-row">

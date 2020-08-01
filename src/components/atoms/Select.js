@@ -4,19 +4,22 @@ import Arrow from "./arrow.svg";
 
 const Select = (props, ref) => {
   return (
-    <select
-      className="w-full md:w-64 bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md"
-      {...props}
-      ref={ref}
-      style={{ backgroundImage: `url(${Arrow})` }}
-    >
-      {selectOptions.map((k, i) => (
-        <option value={k.id} key={i}>
-          {k.value}
-        </option>
-      ))}
+    <label htmlFor="select">
+      <select
+        className="w-full md:w-64 bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md"
+        {...props}
+        ref={ref}
+        id="select"
+        style={{ backgroundImage: `url(${Arrow})` }}
+      >
+        {selectOptions.map((k, i) => (
+          <option value={k.id} key={i}>
+            {k.value}
+          </option>
+        ))}
+      </select>
       <style jsx>{`
-        select {
+        label select {
           background-repeat: no-repeat;
           background-position-x: 98%;
           background-position-y: 50%;
@@ -29,7 +32,7 @@ const Select = (props, ref) => {
           line-height: normal;
         }
       `}</style>
-    </select>
+    </label>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
 const STYLES = {
-  pill: "text-white font-bold w-24 h-8 rounded-lg",
+  pill: "font-bold w-24 h-8 rounded-lg",
   classic: "classic font-bold whitespace-no-wrap",
 };
 

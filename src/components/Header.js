@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 function Header() {
   return (
-    <div className="h-14 flex justify-between items-center max-w-80 px-4 relative z-50">
+    <div className="h-14 flex justify-between items-center max-w-80 px-4 z-50 absolute w-full">
       <Link className="text-lg font-bold text-black" to="/">
         CSS Transforms
       </Link>

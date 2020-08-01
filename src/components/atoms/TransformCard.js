@@ -34,7 +34,7 @@ function TransformCards({ id }) {
           type="default"
         />
       </div>
-      <label htmlFor="function">
+      <label htmlFor="function" className="w-full">
         <Input
           id="function"
           className={`w-full bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md ${border}`}
