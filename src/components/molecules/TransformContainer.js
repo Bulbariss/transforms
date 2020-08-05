@@ -7,7 +7,7 @@ function TransformContainer({ children }) {
 
   return useObserver(() => (
     <>
-      <div className="container flex justify-center items-center min-h-96 px-4 h-screen">
+      <div className="container flex justify-center items-center min-h-96 px-4 h-screen relative">
         {children}
       </div>
       <style>{store.containerCss}</style>

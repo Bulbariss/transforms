@@ -14,7 +14,7 @@ const CloseButton = ({ className, type, ...props }, ref) => {
       aria-label="Close"
       type="button"
     >
-      <svg
+      {/* <svg
         viewBox="0 0 24 24"
         focusable="false"
         role="presentation"
@@ -25,6 +25,26 @@ const CloseButton = ({ className, type, ...props }, ref) => {
       >
         <line x1="2" y1="2" x2="22" y2="22" />
         <line x1="2" y1="22" x2="22" y2="2" />
+      </svg> */}
+      <svg
+        className="h-5 w-5 text-black"
+        // height="21"
+        viewBox="0 0 21 21"
+        // width="21"
+        strokeWidth="2px"
+        stroke="red"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          transform="translate(5 5)"
+        >
+          <path d="m.5 10.5 10-10" />
+          <path d="m10.5 10.5-10-10z" />
+        </g>
       </svg>
     </button>
   );

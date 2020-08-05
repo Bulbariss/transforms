@@ -13,13 +13,22 @@ function ThemeToggle() {
     });
   }
 
+  function handleOnClick() {
+    setIsMoon(!isMoon);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("isLightTheme", isMoon);
+    }
+  }
+
   useEffect(() => {
     document.body.classList.add("transition-colors");
     document.body.classList.add("duration-200");
     document.body.classList.add("bg-grey-50");
     document.body.classList.add("text-dark");
 
-    if (document.body.getAttribute("data-theme") === "light") {
+    if (localStorage.getItem("isLightTheme")) {
+      setIsMoon(!JSON.parse(localStorage.getItem("isLightTheme")));
+    } else if (document.body.getAttribute("data-theme") === "light") {
       setIsMoon(false);
     } else if (document.body.getAttribute("data-theme") === "dark") {
       setIsMoon(true);
@@ -40,9 +49,9 @@ function ThemeToggle() {
   return (
     <button
       type="button"
-      aria-label="Switch color `theme"
+      aria-label="Switch color theme"
       className="w-8 h-8 flex justify-center items-center mr-4 hover:bg-grey-500 rounded-md transition-colors duration-100"
-      onClick={() => setIsMoon(!isMoon)}
+      onClick={() => handleOnClick()}
     >
       <svg
         viewBox="0 0 24 24"

@@ -6,7 +6,18 @@ import Button from "../atoms/Button";
 
 function ItemCss() {
   const store = useContext(appContext);
-  let [input, setInput] = useState(store.itemCss);
+  let [input, setInput] = useState(getCss());
+  function getCss() {
+    if (typeof window !== "undefined") {
+      if (localStorage.getItem("itemCss")) {
+        return JSON.parse(localStorage.getItem("itemCss"));
+      } else {
+        return store.itemCss;
+      }
+    } else {
+      return store.itemCss;
+    }
+  }
   const defaultCss = `.item {
   transition: all 0.3s ease-in;
   perspective: 550px;
@@ -16,11 +27,13 @@ function ItemCss() {
   function handleOnChange(event) {
     setInput((input = event.target.value));
     store.itemCss = event.target.value;
+    store.writeItemCss();
   }
 
   function setToDefault() {
     setInput(defaultCss);
     store.itemCss = defaultCss;
+    store.deleteItemCss();
   }
 
   return useObserver(() => (
@@ -32,7 +45,7 @@ function ItemCss() {
         <Button
           onClick={() => setToDefault()}
           type="pill"
-          className="border-2 border-grey-700 hover:border-grey-600 text-grey-700 hover:text-grey-600"
+          className="border-2 border-grey-700 hover:opacity-75 text-grey-700 transition-opacity"
         >
           Default
         </Button>

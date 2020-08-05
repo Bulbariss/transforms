@@ -12,7 +12,17 @@ function TransformItems() {
     cube: <TransformCube />,
   };
 
-  let [activeComp, setActiveComp] = useState("text");
+  let [activeComp, setActiveComp] = useState(
+    typeof window !== "undefined" && localStorage.getItem("activeItem")
+      ? localStorage.getItem("activeItem")
+      : "text"
+  );
+
+  function setLS(item) {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("activeItem", item);
+    }
+  }
 
   return (
     <section className="max-w-80">
@@ -27,7 +37,10 @@ function TransformItems() {
               ? "bg-indigo-900 cursor-not-allowed"
               : "hover:bg-indigo-600 bg-indigo-700"
           } mx-2 text-white`}
-          onClick={() => setActiveComp("text")}
+          onClick={() => {
+            setLS("text");
+            setActiveComp("text");
+          }}
           type="pill"
         >
           Text
@@ -38,7 +51,10 @@ function TransformItems() {
               ? "bg-indigo-900 cursor-not-allowed"
               : "hover:bg-indigo-600 bg-indigo-700"
           } mx-2 text-white`}
-          onClick={() => setActiveComp("image")}
+          onClick={() => {
+            setLS("image");
+            setActiveComp("image");
+          }}
           type="pill"
         >
           Image
@@ -49,7 +65,10 @@ function TransformItems() {
               ? "bg-indigo-900 cursor-not-allowed"
               : "hover:bg-indigo-600 bg-indigo-700"
           } mx-2 text-white`}
-          onClick={() => setActiveComp("cube")}
+          onClick={() => {
+            setLS("cube");
+            setActiveComp("cube");
+          }}
           type="pill"
         >
           Cube

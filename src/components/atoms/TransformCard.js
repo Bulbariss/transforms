@@ -14,6 +14,7 @@ function TransformCards({ id }) {
   function handleOnChange(event) {
     setInput((input = event.target.value));
     store.changeValue(index, event.target.value);
+    store.writeValuesToLS();
   }
 
   function validateName() {
@@ -30,13 +31,16 @@ function TransformCards({ id }) {
         <p className="text-lg font-bold">{store.items[index].name}</p>
         <CloseButton
           style={{ marginRight: "-6px" }}
-          onClick={() => store.removeItem(id)}
+          onClick={() => {
+            store.removeItem(id);
+            store.writeToLS();
+          }}
           type="default"
         />
       </div>
-      <label htmlFor="function" className="w-full">
+      <label htmlFor={id} className="w-full">
         <Input
-          id="function"
+          id={id}
           className={`w-full bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md ${border}`}
           type="text"
           placeholder={store.items[index].placeholder}

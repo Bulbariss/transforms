@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import TransformCards from "./molecules/TransformCards";
 import Select from "./atoms/Select";
 import { appContext } from "./store/Store";
@@ -8,7 +8,10 @@ import Button from "./atoms/Button";
 
 function DisplayTransforms() {
   const store = useContext(appContext);
-
+  useEffect(() => {
+    store.readLS();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   let select = useRef();
   let ref = useRef();
 
@@ -21,6 +24,7 @@ function DisplayTransforms() {
   function addTransform() {
     const item = getOption(select.current.value);
     store.addItem(item.value, "", item.placeholder, item.regex);
+    store.writeToLS();
   }
 
   function copy() {
@@ -67,7 +71,10 @@ function DisplayTransforms() {
           Add
         </Button>
         <Button
-          onClick={() => (store.items = [])}
+          onClick={() => {
+            store.items = [];
+            store.deleteItemsFromLS();
+          }}
           type="pill"
           style={{
             height: "2.375rem",
